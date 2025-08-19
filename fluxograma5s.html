@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fluxograma 5S com Modais Verticais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #eef6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .step {
+            background-color: #fff;
+            border-left: 8px solid #4CAF50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 320px;
+            text-align: center;
+        }
+
+        .step i {
+            font-size: 28px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .step button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .step button:hover {
+            background-color: #388e3c;
+        }
+
+        .arrow {
+            font-size: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(5px);
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1
+        style="text-align: center; font-size: 24px; color: #2E7D32; font-family: 'Segoe UI', sans-serif; margin-bottom: 40px;">
+        🧭 "Tudo começa com a identificação dos problemas e ineficiências no ambiente organizacional".
+    </h1>
+
+
+
+    <div class="container">
+        <div class="step"><i class="fas fa-search"></i><strong>Diagnóstico</strong><br>Análise dos problemas
+            organizacionais<br>
+            <button onclick="openModal('modal1')">Ver mais</button>
+        </div>
+        <div class="arrow">⬇️</div>
+        <div class="step"><i class="fas fa-filter"></i><strong>1º S - Seiri</strong><br>Separar o necessário do
+            desnecessário<br>
+            <button onclick="openModal('modal2')">Ver mais</button>
+        </div>
+        <div class="arrow">⬇️</div>
+        <div class="step"><i class="fas fa-boxes-stacked"></i><strong>2º S - Seiton</strong><br>Organizar os itens
+            necessários<br>
+            <button onclick="openModal('modal3')">Ver mais</button>
+        </div>
+        <div class="arrow">⬇️</div>
+        <div class="step"><i class="fas fa-broom"></i><strong>3º S - Seiso</strong><br>Limpeza e manutenção do local<br>
+            <button onclick="openModal('modal4')">Ver mais</button>
+        </div>
+        <div class="arrow">⬇️</div>
+        <div class="step"><i class="fas fa-check-double"></i><strong>4º S - Seiketsu</strong><br>Padronizar e manter os
+            3S anteriores<br>
+            <button onclick="openModal('modal5')">Ver mais</button>
+        </div>
+        <div class="arrow">⬇️</div>
+        <div class="step"><i class="fas fa-users"></i><strong>5º S - Shitsuke</strong><br>Disciplinar e criar cultura
+            organizacional<br>
+            <button onclick="openModal('modal6')">Ver mais</button>
+        </div>
+        <div class="arrow">⬇️</div>
+        <div class="step"><i class="fas fa-star"></i><strong>Resultados</strong><br>Ambiente organizado, seguro e
+            eficiente<br>
+            <button onclick="openModal('modal7')">Ver mais</button>
+        </div>
+    </div>
+
+    <!-- Modais -->
+    <div class="modal" id="modal1">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <h2>Diagnóstico</h2>
+            <p>Identifica os principais problemas, pontos de melhoria e gargalos organizacionais.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal2">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <h2>1º S - Seiri</h2>
+            <p>Seleciona e elimina materiais ou atividades desnecessárias, liberando espaço e tempo.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal3">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <h2>2º S - Seiton</h2>
+            <p>Organiza o que é útil, de forma funcional e acessível, otimizando processos.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal4">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal4')">&times;</span>
+            <h2>3º S - Seiso</h2>
+            <p>Realiza a limpeza constante dos ambientes e equipamentos para garantir qualidade.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal5">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal5')">&times;</span>
+            <h2>4º S - Seiketsu</h2>
+            <p>Padroniza os métodos e cria rotinas para manter as práticas dos 3S anteriores.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal6">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal6')">&times;</span>
+            <h2>5º S - Shitsuke</h2>
+            <p>Envolve todos na disciplina e construção de uma cultura de excelência.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal7">
+        <div class="modal-content"><span class="close-btn" onclick="closeModal('modal7')">&times;</span>
+            <h2>Resultados</h2>
+            <p>Ambiente produtivo, seguro e eficiente, promovendo melhorias contínuas.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
